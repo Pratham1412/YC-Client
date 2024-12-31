@@ -15,6 +15,7 @@ import Auth from '../../Pages/Auth/Auth';
 function Navbar({toggleDrawer, setEditCreateChanelBtn}) {
 
     const [AuthBtn, setAuthBtn] = useState(false)
+    const CurrentUser=useSelector(state=>state.currentUserReducer)
 
     // const CurrentUser ={
     //     result: {
@@ -23,9 +24,7 @@ function Navbar({toggleDrawer, setEditCreateChanelBtn}) {
     //     },
     // };
     //const CurrentUser = null;
-    const CurrentUser=useSelector(state=>state.currentUserReducer)
     console.log(CurrentUser)
-    
     useEffect(()=>{
     function start(){
         gapi.client.init({

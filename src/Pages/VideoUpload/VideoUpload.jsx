@@ -3,13 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { uploadVideo } from "../../actions/video";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "./VideoUpload.css";
-
-
-
-
-
-
-
 function VideoUpload({ setVidUploadPage }) {
   const CurrentUser = useSelector((state) => state.currentUserReducer);
   const dispatch = useDispatch();
@@ -38,15 +31,15 @@ function VideoUpload({ setVidUploadPage }) {
       alert("Plz Enter A Title of the video");
     } else if (!videoFile) {
       alert("Plz Attach a video File");
-    } else if (videoFile.size > 1000000) {
-      alert("Plz Attch video file less than 1kb");
+    } else if (videoFile.size > 10000000000000) {
+      alert("Plz Attach video file less than 1kb");
     } else {
       const fileData = new FormData();
       fileData.append("file", videoFile);
       fileData.append("title", title);
       fileData.append("chanel", CurrentUser?.result._id);
       fileData.append("Uploder", CurrentUser?.result.name);
-     console.log(videoFile)
+    //   console.log(videoFile)
       dispatch(
         uploadVideo({
           fileData: fileData,

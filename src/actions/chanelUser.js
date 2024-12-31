@@ -1,10 +1,10 @@
-import * as api from  '../api';
+import * as api from "../api";
 
 
-export const fetchAllChanels=()=>async(dispatch)=>{
+export const fetchAllChanel=()=>async(dispatch)=>{
     try {
-        const {data} = await api.fetchAllChanels();
-        dispatch({type:'FETCH_CHANELS',payload:data})   
+        const {data}= await api.fetchAllChanel();
+        dispatch({type:'FETCH_CHANELS',payload:data})
     } catch (error) {
         console.log(error)
     }
@@ -12,8 +12,8 @@ export const fetchAllChanels=()=>async(dispatch)=>{
 export const updateChanelDate=(id,updateData)=> async(dispatch)=>{
     try {
         const {data}= await api.updateChanelData(id,updateData);
-        dispatch ({type:'UPDATE_DATA',payload: data})
+        dispatch({type:'UPDATE_DATA',payload: data})
     } catch (error) {
-        console.log()
+        console.log(error)
     }
 }

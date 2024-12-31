@@ -8,23 +8,23 @@ import DrawerSidebar from "./Components/LeftSidebar/DrawerSidebar";
 import { BrowserRouter as Router } from "react-router-dom";
 import CreateEditChanel from "./Pages/Chanel/CreateEditChanel";
 import { useDispatch } from "react-redux";
-import { fetchAllChanels } from "./actions/chanelUser";
+import { fetchAllChanel } from "./actions/chanelUser";
 import VideoUpload from "./Pages/VideoUpload/VideoUpload";
 import { getAllVideo } from "./actions/video";
 import { getAllComment } from "./actions/comment";
 import { getAlllikedVideo } from "./actions/likedVideo";
-//import { getAllHistory } from "./api";
-// import {  getAlllikedVideo } from "./actions/likedVideo";
+import { getAllHistory } from "./actions/History";
+
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllChanels());
+    dispatch(fetchAllChanel());
     dispatch(getAllVideo());
     dispatch(getAlllikedVideo());
     dispatch(getAllComment());
-    //dispatch(getAllHistory());
+    dispatch(getAllHistory());
   }, [dispatch]);
 
   const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({

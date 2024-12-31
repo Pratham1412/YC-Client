@@ -1,7 +1,8 @@
 import React from 'react'
 import ShowVideoList from '../ShowVideoList/ShowVideoList'
-function WHLVideoList({page,CurrentUser,videoList}) {
-  //console.log(videoList)
+
+function WHLVideoList({ page, CurrentUser,videoList }) {
+  // console.log(videoList)
   return (
     <>
      { CurrentUser ?(<>
@@ -24,4 +25,4 @@ function WHLVideoList({page,CurrentUser,videoList}) {
   )
 }
 
-export default WHLVideoList;
+export default WHLVideoList

@@ -2,8 +2,9 @@ import {combineReducers} from "redux";
 import authReducer from "./auth";
 import chanelReducers from "./chanel";
 import currentUserReducer from './currentUser';
-import videoReducer from './Video';
+import videoReducer from "./Video";
 import likedVideoReducer from './likedVideo';
+import watchLaterReducer from "./watchLater";
 import commentReducer from './comment';
 import HistoryReducer from "./history";
 export default combineReducers({
@@ -12,6 +13,7 @@ export default combineReducers({
     chanelReducers,
     videoReducer,
     likedVideoReducer,
+    watchLaterReducer,
     commentReducer,
     HistoryReducer
 });
